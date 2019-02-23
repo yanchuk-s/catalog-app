@@ -120,7 +120,8 @@ export default new Vuex.Store({
       }
     ],
     singlePage: false,
-    homePage: true
+    homePage: true,
+    checkItem: null
   },
   mutations: {
     showSinglePage(state){
@@ -130,6 +131,9 @@ export default new Vuex.Store({
     hideSinglePage(state){
       state.singlePage = false
       state.homePage = true
+    },
+    checkItem(state, item){
+      state.checkItem = item
     }
   },
   actions: {
@@ -138,6 +142,9 @@ export default new Vuex.Store({
     },
     hideSinglePage({commit}){
       commit('hideSinglePage')
+    },
+    checkItem({commit}, item){
+      commit('checkItem', item)
     }
   }
 })
